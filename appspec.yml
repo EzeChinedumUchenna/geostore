@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: deploy.sh
+  - source: script/deploy.sh
     destination: /home/ubuntu/deploy.sh
 hooks:
   AfterInstall:
