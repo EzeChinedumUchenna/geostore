@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     DOCKERHUB_USERNAME: "nedumdocker"
-    DOCKERHUB_PASSWORD: "dckr_pat_blDfhsWzUJq-A0FAz4mjqYbszRw"  #(System Manager is not Free so I can store the key on KVM)
+    DOCKERHUB_PASSWORD: "dckr_pat_blDfhsWzUJq-A0FAz4mjqYbszRw"  #(System Manager is not Free thus I will store the key here instead of using KVM)
     DOCKER_USERNAME: "nedumdocker"
     DOCKER_IMAGE_NAME: "seamfix-app"
     DOCKER_IMAGE_TAG: "latest"
