@@ -14,7 +14,7 @@ aws ecr get-login-password --region us-east-2 | docker login --username AWS --pa
 
 # Pull the latest image
 #docker pull $ECR_REPOSITORY:$IMAGE_TAG
-docker pull 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
+docker pull 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:8
 
 # Stop and remove the existing container if it exists
 if [ "$(docker ps -q -f name=seamfixapp)" ]; then
@@ -23,6 +23,6 @@ if [ "$(docker ps -q -f name=seamfixapp)" ]; then
 fi
 
 # Run the new container
-docker run -d --restart always -p 9191:9191 --name seamfix-app 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
+docker run -d --restart always -p 9191:9191 --name seamfix-app 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:8
 #docker run -d --restart always -p 9191:9191 --name seamfixapp $ECR_REPOSITORY:$IMAGE_TAG
 
