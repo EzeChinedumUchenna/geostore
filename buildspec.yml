@@ -3,18 +3,13 @@ version: 0.2
 env:
   variables:
     DOCKERHUB_USERNAME: "nedumdocker"
-    DOCKERHUB_PASSWORD: "dckr_pat_blDfhsWzUJq-A0FAz4mjqYbszRw"  #(System Manager is not Free thus I will store the key here instead of using KVM)
+    DOCKERHUB_PASSWORD: "dckr_pat_blDfhsWzUJq-A0FAz4mjqYbszRw"  # Store the key here since System Manager is not free
     DOCKER_USERNAME: "nedumdocker"
-    DOCKER_IMAGE_NAME: "seamfix-app"
+    DOCKER_IMAGE_NAME: "seamfixapp"
     DOCKER_IMAGE_TAG: "latest"
     #DOCKERHUB_REPOSITORY: "your-dockerhub-repo/your-image"
 
-  #parameter-store:                     
-   # DOCKERHUB_USERNAME: "/dockerhub/username"
-    #DOCKERHUB_PASSWORD: "/dockerhub/password"
-
 phases:
-
   pre_build:
     commands:
       - echo "Logging in to Docker Hub..."
@@ -23,10 +18,11 @@ phases:
   build:
     commands:
       - echo "Building Docker image..."
-      - docker build -t $DOCKER_USERNAME/DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG .
+      - docker build -t $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG .
 
   post_build:
     commands:
       - echo "Tagging Docker image..."
+      - docker tag $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
       - echo "Pushing Docker image to Docker Hub..."
-      - docker push $DOCKER_USERNAME/DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+      - docker push $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
