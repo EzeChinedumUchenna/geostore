@@ -18,3 +18,9 @@ phases:
       - docker tag geostore-app:latest 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
       - echo "Pushing Docker image to Docker Hub..."
       - docker push 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
+      - zip -r app-spec.zip appspec.yml # This includes all files in the current directory, including appspec.yml
+      - echo "Uploading packaged application to S3..."
+
+artifacts:
+  files:
+    - app-spec.zip
