@@ -8,4 +8,4 @@ hooks:
   BeforeInstall:
     - location: script/deploy.sh
       timeout: 300
-      runas: ubuntu
+      runas: root
