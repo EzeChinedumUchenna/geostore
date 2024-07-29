@@ -1,10 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: script/deploy.sh
-    destination: /home/ubuntu/deploy.sh
+  - source: /
+    destination: /home/ubuntu/app
+
 hooks:
-  AfterInstall:
-    - location: /home/ubuntu/deploy.sh
+  BeforeInstall:
+    - location: deploy.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
