@@ -22,7 +22,6 @@ phases:
      # - echo $CODEBUILD_BUILD_NUMBER > script/build_number
 
 artifacts:
-   name: geostore-appspec.zip
    files:
     - appspec.yml
     - script/deploy.sh
