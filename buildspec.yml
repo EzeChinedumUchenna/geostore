@@ -18,10 +18,10 @@ phases:
       - docker tag geostore-app:latest 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
       - echo "Pushing Docker image to Docker Hub..."
       - docker push 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER
-      - echo $CODEBUILD_BUILD_NUMBER > build_number.txt
+      - echo $CODEBUILD_BUILD_NUMBER > /script/build_number
 
 artifacts:
   files:
     - appspec.yml
     - script/deploy.sh
-    - script/build_number.txt
+    - script/build_number
