@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-BUILD_NUMBER=$(cat /home/ubuntu/app/build_number.txt)
+BUILD_NUMBER=$(cat build_number.txt)
 
 # Variables
 REGION="us-east-2"  # Change to your AWS region
