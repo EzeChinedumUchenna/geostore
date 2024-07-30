@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    BUILD_NUMBER: "${CODEBUILD_BUILD_NUMBER}"
+    BUILD_NUMBER: "$CODEBUILD_BUILD_NUMBER"
 
 phases:
   pre_build:
@@ -19,9 +19,9 @@ phases:
   post_build:
     commands:
       - echo "Tagging Docker image..."
-      - docker tag geostore-app:latest 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:${BUILD_NUMBER}
+      - docker tag geostore-app:latest 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$BUILD_NUMBER
       - echo "Pushing Docker image to Docker Hub..."
-      - docker push 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:${BUILD_NUMBER}
+      - docker push 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$BUILD_NUMBER
       - echo $BUILD_NUMBER > build_number.txt
 
 artifacts:
