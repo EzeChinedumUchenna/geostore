@@ -25,4 +25,3 @@ artifacts:
   files:
     - appspec.yml
     - script/deploy.sh
-   # - script/build_number
