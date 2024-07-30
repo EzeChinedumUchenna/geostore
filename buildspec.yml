@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    BUILD_NUMBER: "$CODEBUILD_BUILD_NUMBER"
+    BUILD_NUMBER: $CODEBUILD_BUILD_NUMBER
 
 phases:
   pre_build:
@@ -28,4 +28,4 @@ artifacts:
   files:
     - appspec.yml
     - script/deploy.sh
-    - build_number.txt
+    - script/build_number.txt
