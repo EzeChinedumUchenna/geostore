@@ -4,7 +4,7 @@
 #BUILD_NUMBER=$(cat build_number.txt)
 
 # Variables
-REGION="us-east-2"  # Change to your AWS region
+REGION="us-east-2"  # Change to your AWS region..
 ECR_REPOSITORY="637423571998.dkr.ecr.us-east-2.amazonaws.com/seamfixapp"  # Change to your ECR repository URI..
 IMAGE_TAG="latest"
 
