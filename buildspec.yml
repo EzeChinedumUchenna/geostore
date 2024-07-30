@@ -19,7 +19,7 @@ phases:
       - echo "Pushing Docker image to Docker Hub..."
       - docker push 637423571998.dkr.ecr.us-east-2.amazonaws.com/geostore-app:$CODEBUILD_BUILD_NUMBER\
       - ls -al
-      - echo $CODEBUILD_BUILD_NUMBER > /home/ubuntu/app/script/build_number
+      - echo $CODEBUILD_BUILD_NUMBER > script/build_number
 
 artifacts:
   files:
